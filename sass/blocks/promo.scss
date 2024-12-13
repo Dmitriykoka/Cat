@@ -1,0 +1,129 @@
+.promo {
+  @media (max-width: $width-max-mobile) {
+    color: $color-white;
+    text-align: center;
+
+    background: {
+      image: url("../img/background/promo-back-mobile.jpg"), linear-gradient($promo-green, $promo-green 302px, $color-white 302px);
+      position: 50% 0;
+      repeat: no-repeat;
+      size: auto 302px;
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/background/promo-back-mobile@2x.jpg"), linear-gradient($promo-green, $promo-green 302px, $color-white 302px);
+    }
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    // Устанавливаем относительное позиционирование, чтобы по отношению к нему спозиционировать фоновый бекгрануд в псевдоэлементе.
+    position: relative;
+  }
+}
+
+.promo__wrapper {
+  @media (max-width: $width-max-mobile) {
+    padding-top: 27px;
+  }
+
+  @media (min-width: $width-tablet) {
+    position: relative;
+    padding: 33px 87px 526px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    // Возвращаем static позиционирование в пользу родителя .promo.
+    position: initial;
+    padding: 81px 726px 185px 80px;
+
+    /// Оформляю фоновый бекграунд псевдоэлементом.
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      // Устанавливаю отрицательный отступ (-400px), чтобы top-граница фонового бекгранунда ушла вверх за область позиционирования. Высота меню в шапке 140px. Но есть проблема при переполнении пунктами меню - зеленый фон сдвигается вниз, появляется белая полоса сверху.
+      top: -400px;
+      right: 0;
+      bottom: 0;
+      z-index: -2;
+      background-color: $promo-green;
+      background-image: url("../img/background/promo-back-desktop.jpg");
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url("../img/background/promo-back-desktop@2x.jpg");
+        background-size: auto 690px;
+      }
+    }
+  }
+}
+
+.promo__title {
+  word-break: break-word;
+
+  @media (max-width: $width-max-mobile) {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: $width-tablet) {
+    font-size: 60px;
+    margin-bottom: 41px;
+  }
+}
+
+.promo__lead {
+  word-break: break-word;
+  text-transform: uppercase;
+
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 28px;
+  }
+
+  @media (min-width: $width-tablet) {
+    line-height: 1;
+    margin-bottom: 49px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    margin-bottom: 52px;
+  }
+}
+
+.promo__image {
+  display: block;
+  margin: 0 auto;
+
+  @media (min-width: $width-tablet) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 709px;
+    height: 609px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    top: 0;
+    /// Расчет статичной левой позиции промофото –> середина вьюпорта минус половина ширины иллюстрации.
+    /// Иначе, если указать только процент, то при изменении ширины вьюпорта и фото будет сдвигаться на новое значение позиции.
+    left: calc(50% - 162px);
+    width: 552px;
+    height: 500px;
+  }
+}
+
+.promo__button {
+  @media (max-width: $width-max-mobile) {
+    width: 100%;
+    padding: 11px 26px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding: 17px 26px;
+    width: auto;
+    font-size: 20px;
+    line-height: 20px;
+  }
+}

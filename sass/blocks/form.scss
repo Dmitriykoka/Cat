@@ -1,0 +1,135 @@
+/// <form class="form">
+
+.form__fieldset-wrapper {
+  display: grid;
+
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 26px;
+    row-gap: 25px;
+  }
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 72px;
+    row-gap: 72px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    width: $width-desktop-content;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    margin: 0 auto;
+    margin-bottom: 69px;
+  }
+}
+
+.form__fieldset {
+  margin: 0;
+}
+
+// Каждый блок имеет разные отступы
+
+// Информация о коте
+// .form__fieldset--about { }
+
+// Цель программы
+.form__fieldset--target {
+  @media (max-width: $width-max-mobile) {
+    padding: 22px 0 19px;
+    border-top: 1px solid $special-grey-200;
+    border-bottom: 1px solid $special-grey-200;
+  }
+
+  // @media (min-width: $width-tablet) {}
+}
+
+// Контактные данные (владельца кота)
+.form__fieldset--contacts {
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 23px;
+  }
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 65px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    margin-bottom: 66px;
+  }
+}
+
+// Коментарий
+.form__fieldset--comments {
+  @media (max-width: $width-max-mobile) {
+    margin-bottom: 23px;
+  }
+
+  @media (min-width: $width-tablet) {
+    margin-bottom: 65px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    margin-bottom: 67px;
+  }
+}
+
+// Дополнительно
+// .form__fieldset--more {}
+
+// Обертка кнопки
+.form__button-wrapper {
+  display: grid;
+
+  @media (max-width: $width-max-mobile) {
+    margin-top: 34px;
+    row-gap: 21px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding-left: $width-tablet-padding-inner;
+    padding-right: $width-tablet-padding-inner;
+    margin: 54px auto 0;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 60px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    margin-top: 61px;
+    padding: 0;
+    column-gap: 80px;
+  }
+}
+
+// Отправить заявку
+.form__button {
+  @media (max-width: $width-max-mobile) {
+    justify-self: center;
+    width: $width-mobile-content;
+    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding: 16px 45px;
+    font-size: 20px;
+    line-height: 1;
+  }
+}
+
+.form__notice {
+  margin: 0;
+  line-height: 16px;
+
+  @media (max-width: $width-max-mobile) {
+    justify-self: center;
+  }
+
+  @media (min-width: $width-tablet) {
+    font-size: 16px;
+    padding-top: 15px;
+  }
+
+  @media (min-width: $width-pre-desktop) {
+    padding-top: 18px;
+  }
+}
